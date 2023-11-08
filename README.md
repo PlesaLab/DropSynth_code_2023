@@ -5,7 +5,7 @@
 This set of scripts provides an example for how to generate DropSynth oligos for a set of libraries. We will use 4 libraries from this paper. For updated versions of this code please check [https://github.com/PlesaLab](https://github.com/PlesaLab)
 
 #### Requirements:
-* anaconda
+* anaconda (see the ds063022.yml file)
  * python 3.5 environment
  * python-levenshtein
  * biopython
@@ -18,6 +18,7 @@ This set of scripts provides an example for how to generate DropSynth oligos for
 #### New features
 
 * switched to a “recipe” based workflow with all parameters in a single file
+* ability to use any cloning sites
 * uses Lattice-Automation’s seqfold python library for minimum free energy structure calculations, much faster than unafold (hybrid-ss-min)
 * implemented a programmable database for handling all restriction enzyme sites required
 * implements the ability to split as many genes as necessary in first step with subsequent (384x, 1536x) library splitting
