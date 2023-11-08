@@ -15,6 +15,21 @@ This set of scripts provides an example for how to generate DropSynth oligos for
 * [**seqfold**](https://github.com/Lattice-Automation/seqfold)
 * (_optional_) unafold (only require hybrid-ss-min), this requires the appropriate [licence](http://www.unafold.org/Dinamelt/software/obtaining-unafold.php)
 
+#### New features
+
+* switched to a “recipe” based workflow with all parameters in a single file
+* uses Lattice-Automation’s seqfold python library for minimum free energy structure calculations, much faster than unafold (hybrid-ss-min)
+* implemented a programmable database for handling all restriction enzyme sites required
+* implements the ability to split as many genes as necessary in first step with subsequent (384x, 1536x) library splitting
+* virtual assembly and translation to verify oligo designs
+* the option to do barcode reversal between libraries to offset barcoded bead effects
+* improved codon optimization with lower split failures through the use of hardcoded rules
+* added in the ability to require certain sequences (controls) in each library
+* (Beta) Single oligo processing for very small genes
+* (Beta) support for DNA (non-protein) constructs
+* improved oligo junction length handling, with genes that fail due to length placed into a special file for input into higher oligo splits.
+
+
 #### Sequence input
 
 The input sequences can be found in the folders:
