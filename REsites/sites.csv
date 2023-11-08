@@ -1,0 +1,10 @@
+name,site,self_overlap_possible,gene_no_buffer,gene_with_buffer,gene_with_asmprim,after_split,add_btsi,final,random_dna_gene_padding,random_dna_oligo_padding,notes
+BspQI,GCTCTTC,No,0,0,0,0,0,1,0,0,ds1
+BspQIrc,GAAGAGC,No,0,0,0,0,0,1,0,1,ds1
+BtsI,GCAGTG,Yes,0,0,0,0,1,1,0,1,ds1
+BtsIrc,CACTGC,Yes,0,0,0,0,1,1,0,0,ds1
+BsaI,GGTCTC,No,0,1,1,-1,-1,-1,0,-1,cloning
+BsaIrc,GAGACC,No,0,1,1,-1,-1,-1,0,-1,cloning
+EcoRI,GAATTC,No,0,0,0,-1,-1,-1,-1,-1,spare
+PaqCI,CACCTGC,Yes,0,0,0,-1,-1,-1,-1,-1,spare
+PaqCIrc,GCAGGTG,Yes,0,0,0,-1,-1,-1,-1,-1,spare

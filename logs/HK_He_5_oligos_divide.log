@@ -1,0 +1,29 @@
+Config file is:  HK_He_5_oligos.conf
+['HK5_He_out', 'db_oligo', 1536, 2, 5, 'AA', 'yes', 'controls_input/HK_2TM_1EC_HAMP_5oligo_TM2end_posonly.fasta']
+Found 2 required buildoligos
+Warning Calculated Optimal Library Size ( 771.0 ) not equal to Lib Size in Config File!
+total number of records: 1538 (not including req. seqs.), to make 1 full libs of 1536 recs and one partial lib of 6 records.
+2 sequences are required in each sublibrary
+first lib wreq start: 0 end: 1534
+Wrote 1536 records to db_libs/HK5_He_out_split_Lib1.oligos
+Wrote 1536 records to db_libs/HK5_He_out_split_Lib1.full_wRE_wPrim.genes
+Wrote 1536 records to db_libs/HK5_He_out_split_Lib1.full_nRE_nPrim.genes
+Wrote 1536 records to db_libs/HK5_He_out_split_Lib1.full_wRE_noPrim.genes
+Wrote 1536 records to db_libs/HK5_He_out_split_Lib1.proteins
+Wrote 1536 records to db_libs/HK5_He_out_split_Lib1.codon2.oligos
+Wrote 1536 records to db_libs/HK5_He_out_split_Lib1.codon2.full_wRE_wPrim.genes
+Wrote 1536 records to db_libs/HK5_He_out_split_Lib1.codon2.full_nRE_nPrim.genes
+Wrote 1536 records to db_libs/HK5_He_out_split_Lib1.codon2.full_wRE_noPrim.genes
+Wrote 1536 records to db_libs/HK5_He_out_split_Lib1.codon2.proteins
+split_lib_size: 1536 num_seq_required: 2 libcounter: 2 rec_remainder_counter: 6
+last lib wreq start: 1534 end: 1540
+Wrote 6 records to db_libs/HK5_He_out_split_Lib2.oligos
+Wrote 6 records to db_libs/HK5_He_out_split_Lib2.full_wRE_wPrim.genes
+Wrote 6 records to db_libs/HK5_He_out_split_Lib2.full_nRE_nPrim.genes
+Wrote 6 records to db_libs/HK5_He_out_split_Lib2.full_wRE_noPrim.genes
+Wrote 6 records to db_libs/HK5_He_out_split_Lib2.proteins
+Wrote 6 records to db_libs/HK5_He_out_split_Lib2.codon2.oligos
+Wrote 6 records to db_libs/HK5_He_out_split_Lib2.codon2.full_wRE_wPrim.genes
+Wrote 6 records to db_libs/HK5_He_out_split_Lib2.codon2.full_nRE_nPrim.genes
+Wrote 6 records to db_libs/HK5_He_out_split_Lib2.codon2.full_wRE_noPrim.genes
+Wrote 6 records to db_libs/HK5_He_out_split_Lib2.codon2.proteins

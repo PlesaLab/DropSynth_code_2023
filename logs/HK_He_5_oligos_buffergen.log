@@ -1,0 +1,12 @@
+Config file is:  HK_He_5_oligos.conf
+primer: 26 fwd: GCGGCACCACAAACT rev: CGTGGCCTCTGTCCT
+primer: 28 fwd: GACTGCGGCGTTGGT rev: TACGCCCGGGACAGA
+filenames: ['db_oligo/HK5_He_out.oligos']
+Processing Library: db_oligo/HK5_He_out.oligos
+Writing out files db_oligo/HK5_He_out-finaloligos_noAmp.fasta w 1
+db_libs/HK5_He_out-finaloligos.fasta
+Writing out files db_libs/HK5_He_out-finaloligos.fasta w 1
+Processing Library: db_oligo/HK5_He_out.codon2.oligos
+Writing out files db_oligo/HK5_He_out-finaloligos_noAmp.fasta a 2
+db_libs/HK5_He_out-finaloligos.codon2.fasta
+Writing out files db_libs/HK5_He_out-finaloligos.codon2.fasta w 2

@@ -1,0 +1,17 @@
+Hi, calin. This is the main DropSynth oligo generation script v3.
+Please read the README.md before running
+Screening assembly and amplification primers.
+Generating genes and splitting into oligo payload. LibA
+Generating genes and splitting into oligo payload. LibB
+Generating genes and splitting into oligo payload.
+Generating genes and splitting into oligo payload.
+Adding amplification primers (BEFORE BLAT), microbead barcodes, and nicking sites. LibA
+Adding amplification primers (BEFORE BLAT), microbead barcodes, and nicking sites. LibB
+Adding amplification primers (BEFORE BLAT), microbead barcodes, and nicking sites. LibC
+Adding amplification primers (BEFORE BLAT), microbead barcodes, and nicking sites. LibD
+Screening amp and asm primers for off-target hybridization.
+NOTE: Depending on primer hits above you may have to rerun oligobuffergen for all libs.
+Final oligo check of design rules.
+Making CSV file with oligos.
+Checking oligos for homopolymers.
+Done.

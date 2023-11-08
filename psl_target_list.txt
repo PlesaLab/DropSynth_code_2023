@@ -1,0 +1,2 @@
+./db_oligo/HK5_He_out-finaloligos_noAmp.2bit
+./db_oligo/HK4_He_out-finaloligos_noAmp.2bit
