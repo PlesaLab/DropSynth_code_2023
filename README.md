@@ -13,7 +13,8 @@ This set of scripts provides an example for how to generate DropSynth oligos for
  * cython
  * (_optional_) matplotlib 
 * [**seqfold**](https://github.com/Lattice-Automation/seqfold)
-* (_optional_) unafold (only require hybrid-ss-min), this requires the appropriate [licence](http://www.unafold.org/Dinamelt/software/obtaining-unafold.php)
+* [BLAT](https://genome.ucsc.edu/goldenpath/help/blatSpec.html) (faToTwoBit, pslPretty, gfClient, gfServer)
+* (_optional_) [unafold](http://www.unafold.org/Dinamelt/software/obtaining-unafold.php) (only require hybrid-ss-min), this requires the appropriate [licence](http://www.unafold.org/Dinamelt/software/obtaining-unafold.php)
 
 #### New features
 
