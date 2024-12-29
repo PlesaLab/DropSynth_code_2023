@@ -427,7 +427,7 @@ cloning_start = 'GGTCTCACAT'
 cloning_end = 'GACGTGAGACC'
 
 oligos_per_construct = [4,4,5,5]
-constructs_per_lib = [1536, 1536, 1525, 1525]
+constructs_per_lib = [1507, 1507, 1517, 1517]
 barcode_reversed = [False, True, False, True]
 
 allow_KpnI_in_middle = True

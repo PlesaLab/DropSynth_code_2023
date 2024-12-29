@@ -54,9 +54,17 @@ def meltingTemperature(primers, templow, temphigh):
     return newprimers
             
 def evaluateOverlaps(seq, overlapseqs, overlaptemps, deltaGThreshold, selfDimersThreshold, hybridization_method):
-    overlapseqs = secondaryStructure(overlapseqs, deltaGThreshold, hybridization_method)
+    
+    #print("overlapseqs in dimer ",str(overlapseqs))
     overlapseqs = selfDimers(overlapseqs, selfDimersThreshold)
+    #print("overlapseqs out dimer ",str(overlapseqs))
+
     overlapseqs = meltingTemperature(overlapseqs, overlaptemps[0], overlaptemps[1])
+    #print("overlapseqs out Tm ",str(overlapseqs))
+
+    overlapseqs = secondaryStructure(overlapseqs, deltaGThreshold, hybridization_method)
+    #print("overlapseqs out SS ",str(overlapseqs))
+
     if len(overlapseqs) > 0:
         #py2: overlapseqs.sort(lambda x, y: cmp(abs(x[2]), abs(y[2])))
         overlapseqs.sort(key=functools.cmp_to_key(lambda x, y: cmp(abs(x[2]), abs(y[2]))))
@@ -68,49 +76,67 @@ def evaluateOverlaps(seq, overlapseqs, overlaptemps, deltaGThreshold, selfDimers
 def optimizeOverlap(overlap, seq, lengthleeway, positionleeway, overlaptemps, deltaGThreshold, selfDimersThreshold, hybridization_method):
     #First Check Characteristics of all oligos at the same positions with different lengths
     
+
+    #print("overlap ",overlap)
+
     newoverlap = overlap[:]
     poslees = list(range(positionleeway*-1,(positionleeway)+1))
     #py2: poslees.sort(lambda x, y: cmp(abs(x), abs(y)))
-    poslees.sort(key=functools.cmp_to_key(lambda x, y: cmp(abs(x), abs(y))))
+    #OLD:
+    #poslees.sort(key=functools.cmp_to_key(lambda x, y: cmp(abs(x), abs(y))))
+
+    poslees.sort(key=lambda x: abs(x))
+
+    
+    #print("poslees ",poslees)
+
     #print(poslees)
     for pl in poslees:
         for ll in range(lengthleeway+1):
+
             #print("ll=" + str(ll))
             newoverlap = [overlap[0]+pl, overlap[1]+pl]
             ##print(overlap[0])
+            
+            #print("newoverlap ",newoverlap)
             ##print(overlap[1])
             ##print(pl)
             testseqcoords = []
             for i in range(ll+1):
                 #print("i="+str(i))
+                #print("ll="+str(ll))
                 testseqcoords.append([i,ll-i])
                 if not ll==0:
                     testseqcoords.append([i*-1,(ll-i)*-1])
             overlapseqs = []
-            #print(testseqcoords)
+            #print("testseqcoords ",testseqcoords)
+
             for coord in testseqcoords:
                 newcoords = [newoverlap[0]+coord[0], newoverlap[1]+coord[1]]
                 ##print(newoverlap[0])
                 ##print(newoverlap[1])
                 #print(str(newcoords) + '\t' + str(overlap[2]))
+                #print("newcoords "+str(newcoords))
                 if newcoords[1]<=overlap[2]:
                     ##print(newcoords[0])
                     ##print(newcoords[1])
                     overlapseq = seq[newcoords[0]:newcoords[1]]
+                    
                     overlapseqs.append([overlapseq, newcoords])
-                #print(overlapseqs)
+            #print("overlapseqs "+str(overlapseqs))
             finaloverlap = evaluateOverlaps(seq, overlapseqs, overlaptemps, deltaGThreshold, selfDimersThreshold, hybridization_method)
             if finaloverlap:
                 return finaloverlap[1]
         #print("position change")
 
+#this is main function called from split_genes_for_oligos.py
 def optimizedSplit(seq, oligosizemax, lengthleeway, positionleeway, avgoverlapsize, overlaptemps, deltaGThreshold, selfDimersThreshold, num_of_oligos, hybridization_method):
     seqsize = len(seq)
     avgoligolength = ((seqsize - ((num_of_oligos+1)*avgoverlapsize))//num_of_oligos) + 1 #py3 changed to floor div
     
-    ##print("seqsize: "+str(seqsize))
+    #print("seqsize: "+str(seqsize))
     ##print("num_of_oligos: "+str(num_of_oligos))
-    #print(avgoligolength)
+    #print("avgoligolength: "+str(avgoligolength))
     #overlaps = unoptimizedOverlaps(seq, avgoverlapsize, oligosizemax-positionleeway)
     optoverlaps = []
 
@@ -176,7 +202,14 @@ def oligoTm(seqobj):
     
     # set the default tm parameters
     C_primer = 200 # 200nM in standard pcr
-    C_Mg = 1.5 #Taq Buffer i
+
+    #hack
+    #needs to be fixed later
+    if len(seq) > 22:
+        C_Mg = 1.5 #Taq Buffer i
+    else:
+        C_Mg = 0.3 #Taq Buffer i
+
     C_MonovalentIon = 70 #20mM Tris-Cl + 50mM KCL in Taq Buffer  
     C_dNTP = 0.25 #mM
     percentage_DMSO = 0
